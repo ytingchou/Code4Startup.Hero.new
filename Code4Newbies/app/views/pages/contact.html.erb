@@ -3,5 +3,33 @@
 <div class="card z-depth-3">
   <div class="card-content">
     <p>Do you wanna talk? Find me on the map and we can have some drinks.</p>
+    <br />
+    <div id="map"></div>
   </div>
 </div>
+
+<style>
+  #map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+  }
+</style>
+
+<script>
+  function initMap() {
+    var mapDiv = document.getElementById('map');
+    var map = new google.maps.Map(mapDiv, {
+      center: new google.maps.LatLng(-37.81, 144.96),
+      zoom: 14,
+      mapTypeId: 'roadmap'
+    });
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(-37.81, 144.96),
+      title: "Here is Melbourne!",
+      map: map
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap">
+</script>
